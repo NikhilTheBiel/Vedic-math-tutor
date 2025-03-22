@@ -1,133 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vedic Math Tutoring</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .box {
-            width: 200px;
-            height: 100px;
-            background-color: lightblue;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px;
-        }
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
 
-        /* Signup Form Styles */
-        .signup-form {
-            width: 300px;
-            background-color: #f8f8f8;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .signup-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .signup-form button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .signup-form button:hover {
-            background-color: #45a049;
-        }
-
-        .signup-form h2 {
-            font-family: "Montserrat", sans-serif;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    </style>
-  </head>
-  <body>
+    <!-- Main Section -->
     <main>
-      <section>
-        <div>
-          <h1>Vedic Math Tutoring</h1>
-          <hr/>
-          <p>Math Tutoring</p>
-        </div>
-      </section>
-      <section>
-        <div>
-          <p>Helped over 10,000+ students in my career.</p>
-        </div>
-      </section>
+        <section>
+            <div>
+                <h1>Vedic Math Tutoring</h1>
+                <hr/>
+                <p>Helping over 10,000+ students improve their math skills!</p>
+            </div>
+        </section>
 
-      <!-- Signup Form Section -->
-      <section>
-        <div class="signup-form">
-          <h2>Sign Up</h2>
-          <form action="#" method="post">
-            <input type="text" name="name" placeholder="Your Full Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="password" name="password" placeholder="Create a Password" required>
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
-      </section>
+        <!-- Sign Up Form -->
+        <section id="signup-section">
+            <h2>Sign Up for a Free Consultation</h2>
+            <form action="signup.php" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
 
-      <section>
-        <div>
-          <p>Nikhil.co</p>
-          <p class='emoji'>&#9825; &#128211; &#128195; &#9819;</p>
-          <p id='copyright'>&copy;2024 Nikhil.B</p>
-        </div>
-      </section>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+
+        <!-- Footer Section -->
+        <section>
+            <div>
+                <p>Nikhil.co</p>
+                <p class="emoji">&#9825; &#128211; &#128195; &#9819;</p>
+                <p id="copyright">&copy;2024 Nikhil.B</p>
+            </div>
+        </section>
     </main>
+
+    <!-- Background Animation (Optional) -->
     <div id="background">
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
-      <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
+        <div><span></span></div>
     </div>
+
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
