@@ -73,6 +73,102 @@
     <main>
       <h1>Sign Up for Vedic Math Tutoring</h1>
       <div class="form-container">
+      <form
+  action="https://formspree.io/f/xblgogan"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email" required>
+  </label>
+  <label>
+    Your message:
+    <textarea name="message" required></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form>
+
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vedic Math Tutoring - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #2C3E50;
+        font-size: 2.5rem;
+      }
+
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .form-container label {
+        font-size: 1rem;
+        color: #333;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .form-container input,
+      .form-container select,
+      .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .form-container button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Sign Up for Vedic Math Tutoring</h1>
+      <div class="form-container">
         <form id="signUpForm">
           <label for="name">Full Name:</label>
           <input type="text" id="name" name="name" required>
