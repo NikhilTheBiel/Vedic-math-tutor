@@ -1,16 +1,25 @@
-// Form validation script
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-    const passwordInput = document.querySelector("input[name='password']");
-    const confirmPasswordInput = document.querySelector("input[name='confirm_password']");
+// Handle form submission with AJAX (optional)
+const form = document.querySelector('form');
 
-    form.addEventListener("submit", function (e) {
-        // Check if passwords match
-        if (passwordInput.value !== confirmPasswordInput.value) {
-            e.preventDefault(); // Prevent form submission
-            alert("Passwords do not match! Please check your entries.");
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent form from reloading the page
+
+    const formData = new FormData(form);
+
+    fetch('signup.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Sign Up Successful!');
         } else {
-            alert("Sign-up successful!");
+            alert('Something went wrong, please try again.');
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred, please try again later.');
     });
 });
