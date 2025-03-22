@@ -45,6 +45,33 @@
     <button type="submit">Sign Up</button>
 </form>
 
+            <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        
+        // Create a FormData object from the form
+        const formData = new FormData(e.target);
+        
+        fetch('https://formspree.io/f/xblgogan', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank you for signing up!');
+                e.target.reset(); // Reset the form fields
+            } else {
+                alert('There was an error. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error. Please try again.');
+        });
+    });
+</script>
+
+
         </section>
 
         <!-- Footer Section -->
