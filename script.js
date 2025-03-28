@@ -1,25 +1,10 @@
-// Handle form submission with AJAX (optional)
-const form = document.querySelector('form');
+const layers = document.querySelectorAll('.layer');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form from reloading the page
+function parallax() {
+  const y = window.scrollY;
+  for (let i = 1; i < layers.length; i++) {
+    layers[layers.length-i].style.transform = `translateY(${(i*0.1) * y}px)`;
+  }
+}
 
-    const formData = new FormData(form);
-
-    fetch('signup.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Sign Up Successful!');
-        } else {
-            alert('Something went wrong, please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred, please try again later.');
-    });
-});
+window.addEventListener('scroll',parallax,false);
