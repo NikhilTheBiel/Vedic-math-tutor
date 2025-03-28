@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,89 +10,112 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-    </nav>
+<header class="site-header">
+    <h1 class="sr-only">Math is best</h1>
 
-    <!-- Main Section -->
-    <main>
-        <section>
-            <div>
-                <h1>Vedic Math Tutoring</h1>
-                <hr/>
-                <p>Helping over 10,000+ students improve their math skills!</p>
-            </div>
-        </section>
+    <!-- Because Chrome crashes if an overflow is set on the fieldset while a named timeline is on a child element -->
+    <!-- ¯\_(ツ)_/¯ -->
+    <div class="fieldset-wrapper">
+      <fieldset>
+        <legend class="sr-only">Effects</legend>
 
-        <!-- Sign Up Form -->
-        <section id="signup-section">
-            <h2>Sign Up for a Free Consultation</h2>
-     <form action="https://formspree.io/f/xblgogan" method="POST">
-    <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" required>
+        <!-- radio buttons for each of the @keyframes above -->
+        <input type="radio" id="blink-effect" name="effect" value="blink" checked class="sr-only">
+        <label for="blink-effect">About Us</label>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+        <input type="radio" id="horizontal-scroll-effect" name="effect" value="horizontal-scroll" class="sr-only">
+        <label for="horizontal-scroll-effect">Home</label>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+        <input type="radio" id="backwards-scroll-effect" name="effect" value="backwards-scroll" class="sr-only">
+        <label for="backwards-scroll-effect">Course</label>
 
-    <button type="submit">Sign Up</button>
-</form>
-
-            <script>
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        
-        // Create a FormData object from the form
-        const formData = new FormData(e.target);
-        
-        fetch('https://formspree.io/f/xblgogan', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Thank you for signing up!');
-                e.target.reset(); // Reset the form fields
-            } else {
-                alert('There was an error. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error. Please try again.');
-        });
-    });
-</script>
-
-
-        </section>
-
-        <!-- Footer Section -->
-        <section>
-            <div>
-                <p>Nikhil.co</p>
-                <p class="emoji">&#9825; &#128211; &#128195; &#9819;</p>
-                <p id="copyright">&copy;2024 Nikhil.B</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Background Animation (Optional) -->
-    <div id="background">
-        <div><span></span></div>
-        <div><span></span></div>
-        <div><span></span></div>
-        <div><span></span></div>
+        <input type="radio" id="zoom-scroll-effect" name="effect" value="zoom-scroll" class="sr-only">
+        <label for="zoom-scroll-effect">Teachers</label>
+      </fieldset>
     </div>
 
-    <script src="index.js"></script>
-</body>
+    <nav>
+      <ul class="indicator">
+        <li><a href="#snapping"><span class="sr-only">Snapping</span></a></li>
+        <li><a href="#scrolling"><span class="sr-only">Scrolling</span></a></li>
+        <li><a href="#layout"><span class="sr-only">Layout</span></a></li>
+        <li><a href="#transition"><span class="sr-only">Transition</span></a></li>
+        <li><a href="#caveats"><span class="sr-only">Caveats</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="snapping" class="section">
+      <div class="content">
+        <h2><strong>First</strong>, we set up the <em>snapping</em> points</h2>
+
+        <div class="text">
+          <img src="https://assets.codepen.io/197359/flower-white.png" alt="">
+          <p>We set the scrolling element, in this case our <code class="selector">HTML</code> element, to forcibly snap to the Y axis by using <code class="property">scroll-snap-type: y mandatory</code>.</p>
+
+          <p>And then we set <code class="selector">section</code> as the snapping elements by using <code class="property">scroll-snap-align: start</code>.</p>
+        </div>
+      </div>
+    </section>
+    <section id="scrolling" class="section">
+      <div class="content">
+        <h2><strong>Next</strong>, we set up the <em>scrolling</em> animation</h2>
+
+        <div class="text">
+          <img src="https://assets.codepen.io/197359/flower-yellow.png" alt="">
+          <p>We track the <code class="property">view()</code> position of the <code class="selector">section</code> elements using the named timeline <code class="property">view-timeline: --section;</code>. We had previously set the <code class="property">timeline-scope: --section</code> up in our <code class="selector">HTML</code> element, so we can access it from anywhere in the document.</p>
+
+          <p>We animate the <code class="selector">.content</code> children using <code class="property">animation-timeline: --section;</code>. The <code class="selector">.content</code> element will now animate based on its parent <code class="selector">section</code>'s position. This is important due to how we're handling the layout in the next section.</p>
+        </div>
+      </div>
+    </section>
+    <section id="layout" class="section">
+      <div class="content">
+        <h2><strong>Then</strong>, we position a <em>fixed</em> layout</h2>
+
+        <div class="text">
+          <img src="https://assets.codepen.io/197359/flower-blue.png" alt="">
+          <p>We set the <code class="selector">.content</code> elements to <code class="property">position: fixed</code>, so they're removed from the normal document flow and stack on top of each other, giving them a solid background, so only one is visible at a time.</p>
+
+          <p>Their parent <code class="selector">section</code>s are positioned as normal in the layer below, taking up space, scroll-snapping, and powering the <code class="property">animation-timeline</code>.</p>
+        </div>
+      </div>
+    </section>
+    <section id="transition" class="section">
+      <div class="content">
+        <h2><strong>Finally</strong>, we create the <em>transition</em> effects</h2>
+
+        <div class="text">
+          <img src="https://assets.codepen.io/197359/flower-red.png" alt="">
+          <p>By setting the <code class="selector">.content</code> elements to <code class="property">position: fixed</code>, we can now transition between them without a visible scrolling movement.</p>
+
+          <p>We create a normal <code class="selector">@keyframe</code> animation to our liking to transition between them. Check the navigation menu to see different effects.</p>
+        </div>
+      </div>
+    </section>
+    <section id="caveats" class="section">
+      <div class="content">
+        <h2><strong>Caveats</strong></h2>
+
+        <div class="text">
+          <img src="https://assets.codepen.io/197359/flower-purple.png" alt="">
+          <ul>
+            <li>Scrolling animations are not currently available in Firefox. This demo is using a polyfill.</li>
+            <li>This layout is fragile due to the use of <code class="property">position: fixed</code>. You need to carefully manage stacking contexts.</li>
+            <li>Snapping points have their own caveats, such as content taller than the viewport becoming inaccessible, along with the general annoyance of scrolljacking.</li>
+            <li>The <code class="selector">blink</code> effect uses the <code class="property">contrast()</code> filter, which modifies the colors of the entire section. Thus, the background is set to black (or white), ensuring that it appears unchanged during transitions due to already being at maximum contrast.</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+      <script src="index.js"></script>
+
+  <footer>
+   <p class="emoji">&#9825; &#128211; &#128195; &#9819;</p>
+                <p id="copyright">&copy;2024 Nikhil.B</p>
+  </footer>
+  </body>
 </html>
