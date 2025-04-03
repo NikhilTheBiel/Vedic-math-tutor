@@ -1,118 +1,134 @@
-:root {
-  --link: rgb(113, 128, 113);
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s;
+    background: linear-gradient(to bottom, #2E8B57, #fff);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.parallax {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  list-style-type: none;
-
-  & header {
-    width: inherit;
-    position: absolute;
+/* Navigation */
+.menu {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
     align-items: center;
-    padding: 1.5rem;
-
-    & .menu {
-      list-style-type: none;
-      display: flex;
-      gap: 1.25rem;
-
-      &:hover a:not(:hover) { border: none; }
-
-      & li:first-of-type a { border-bottom: 2px solid var(--link); }
-
-      & a {
-        text-decoration: none;
-        font: 900 0.75rem futura,sans-serif;
-        color: var(--link);
-        text-transform: uppercase;
-        padding-bottom: 0.5rem;
-
-        &:hover { border-bottom: 2px solid var(--link); }
-      }
-    }
-
-    & .hamburger {
-      font-size: 2rem;
-      color: var(--link);
-      cursor: pointer;
-      display: none;
-    }
-
-    @media (width < 700px) {
-      & .menu       { display: none; }
-      & .hamburger  { display: block; }
-    }
-  }
-
-  & .layer {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background-position: center 25%;
-    background-size: cover;
-    z-index: -1;
-    transition: transform 0.1 ease-out;
-
-    &:nth-of-type(1) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/1.svg'); }
-    &:nth-of-type(2) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/2.svg'); }
-    &:nth-of-type(3) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/3.svg'); }
-    &:nth-of-type(4) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg'); }
-    &:nth-of-type(5) { background-image: url('https://raw.githubusercontent.com/misalagp/imgs/53ece8c56d462838e143383adc1a3078c1960e4d/4.svg'); }
-    &:nth-of-type(6) { background-image: url('https://gist.githubusercontent.com/mondenoir/5395b6e7d9445c3a0fc82e6ece97268c/raw/bca5c0c6397e38d79b5af9e88f78f0aa7b515b94/img-1.svg'); }
-  }
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    background: url('trees.png') no-repeat center center/cover;
+    position: relative;
 }
 
-@media (height < 700px) {
-  .parallax {
-    height: 160vh;
-  }
+/* Math Elements */
+.math-elements {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    text-align: center;
+}
+.math-book, .blackboard {
+    width: 300px;
+    height: 200px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.content {
-  background-color: rgba(39,40,25);
-  display: grid;
-  place-items: center;
-  gap: 3rem;
-
-  & .info {
-    width: min(80vw,550px);
-    font: 0.85rem/1.8 futura,sans-serif;
-    color: rgba(255,255,255,0.5);
+/* Tutor Section */
+.tutors {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
-
-    & h1 {
-      font-size: 1.25rem;
-      color: rgb(204, 117, 107);
-    }
-
-    & img { width: 30vmin; }
-  }
-
-  & footer {
+    text-align: center;
+    padding: 50px;
+}
+.tutor-board {
+    width: 80%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.tutor-list {
     display: flex;
-    gap: 1rem;
-    padding-bottom: 3rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.tutor {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+}
+.tutor img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
 
-    & ion-icon {
-      cursor: pointer;
-      color: rgb(93, 106, 93);
-      font-size: 1.1rem;
+/* Reviews Section */
+.reviews {
+    padding: 50px;
+    background: linear-gradient(to bottom, #FFD700, #fff);
+    text-align: center;
+}
+.review-card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-      &:hover { color: rgb(121, 149, 121); }
-    }
-  }
+/* Footer */
+footer {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    font-size: 1.2rem;
+}
+.bubbles-container {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+.bubble {
+    width: 15px;
+    height: 15px;
+    background: white;
+    position: absolute;
+    bottom: -10px;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: rise 4s infinite;
+}
+@keyframes rise {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100px); opacity: 0; }
 }
