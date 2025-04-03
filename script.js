@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     // Parallax Scrolling Effect
     const hero = document.querySelector(".hero");
     window.addEventListener("scroll", () => {
@@ -42,4 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
             step.style.transform = "translateY(0)";
         }, index * 500);
     });
+
+    // Scroll Button Logic
+    document.querySelector('.scroll-btn').addEventListener('click', () => {
+        // Logic for scrolling through images, change the background image or any effect here
+        alert('Scrolling through tutoring options!');
+    });
+
 });
