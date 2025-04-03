@@ -42,29 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
             step.style.transform = "translateY(0)";
         }, index * 500);
     });
-
-    // Review Navigation
-    let reviewIndex = 0;
-    const reviews = document.querySelectorAll(".review-box");
-    const prevBtn = document.querySelector(".prev-btn");
-    const nextBtn = document.querySelector(".next-btn");
-
-    function showReview(index) {
-        reviews.forEach((review, i) => {
-            review.style.display = (i === index) ? "block" : "none";
-        });
-    }
-
-    nextBtn.addEventListener("click", () => {
-        reviewIndex = (reviewIndex + 1) % reviews.length;
-        showReview(reviewIndex);
-    });
-
-    prevBtn.addEventListener("click", () => {
-        reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
-        showReview(reviewIndex);
-    });
-
-    // Initial review visibility
-    showReview(reviewIndex);
 });
