@@ -10,6 +10,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
     padding-top: 80px; /* Adjust to prevent header overlap */
+    transition: background 0.3s ease-in-out;
 }
 
 /* Header styles */
@@ -38,7 +39,7 @@ header .logo {
 
 header .logo:hover {
     color: #fff;
-    text-shadow: none;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 0, 255, 0.8);
 }
 
 /* Navigation menu styles */
@@ -46,10 +47,6 @@ nav .menu {
     display: flex;
     list-style: none;
     gap: 2rem;
-}
-
-nav .menu li {
-    list-style-type: none;
 }
 
 nav .menu a {
@@ -77,8 +74,6 @@ nav .menu a:hover {
     text-align: center;
     color: white;
     position: relative;
-    background-position: center 0;
-    transition: background-position 0.1s ease-in-out;
 }
 
 .hero-content {
@@ -86,129 +81,22 @@ nav .menu a:hover {
     padding: 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    padding: 10px 25px;
-    background-color: #f5a623;
-    color: #fff;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-}
-
-.cta-button:hover {
-    background-color: #d48d15;
-}
-
 /* About Us Section */
-section#about {
+section#about, #reviews, .our-journey, #contact {
     padding: 50px 20px;
     text-align: center;
-}
-
-section#about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* Reviews Section */
-#reviews {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#reviews .review-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.review-box {
-    background-color: #f5a623;
-    color: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
 .review-box:hover {
     transform: scale(1.05);
 }
 
-.review-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.review-buttons button {
-    background-color: #f5a623;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.review-buttons button:hover {
-    background-color: #d48d15;
-}
-
-/* Our Journey Section */
-.our-journey {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.our-journey h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-/* Footer styles */
 footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
-    position: relative;
     text-align: center;
-}
-
-footer .footer-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-footer .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 10px;
-}
-
-footer .social-icons ion-icon {
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-}
-
-footer .social-icons ion-icon:hover {
-    color: #f5a623;
+    position: relative;
 }
 
 .bubbles-container {
@@ -236,33 +124,5 @@ footer .social-icons ion-icon:hover {
     }
     100% {
         transform: translateY(-100px) scale(1.5);
-    }
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-    }
-
-    header .logo {
-        font-size: 1.6rem;
-    }
-
-    nav .menu {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav .menu li {
-        width: 100%;
-    }
-
-    nav .menu a {
-        padding: 12px;
-        text-align: center;
-        width: 100%;
     }
 }
