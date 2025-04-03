@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vedic Math Tutoring</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <div class="logo">Vedic Math Tutoring</div>
+            <ul class="menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Courses</a></li>
                 <li><a href="#">Reviews</a></li>
@@ -22,47 +23,51 @@
     </header>
     
     <main>
-        <ul class='parallax'>
-            <li class='layer'></li>
-            <li class='layer'></li>
-            <li class='layer'></li>
-            <li class='layer'></li>
-            <li class='layer'></li>
-            <li class='layer'></li>
-        </ul>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Unlock Your Math Potential</h1>
+                <p>Personalized tutoring to help you master Vedic Mathematics.</p>
+                <a href="#courses" class="cta-button">Explore Courses</a>
+            </div>
+        </section>
 
-        <article class='content'>
-            <section class='info'>
-                <h1>Vedic Math Tutoring</h1>
-                <p>Helping over 10,000+ students improve their math skills!</p>
-            </section>
-        </article>
+        <section class="about" id="about">
+            <h2>About Us</h2>
+            <p>We provide expert tutoring in Vedic Mathematics to help students improve their problem-solving skills and speed in calculations.</p>
+        </section>
+
+        <section class="tutors">
+            <h2>Meet Our Tutors</h2>
+            <div class="tutor-list">
+                <div class="tutor-card"><img src="tutor1.jpg" alt="Tutor 1"><p>John Doe</p></div>
+                <div class="tutor-card"><img src="tutor2.jpg" alt="Tutor 2"><p>Jane Smith</p></div>
+                <div class="tutor-card"><img src="tutor3.jpg" alt="Tutor 3"><p>Alex Brown</p></div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2>What Our Students Say</h2>
+            <div class="review-card">"The best tutoring experience! My math skills improved dramatically."</div>
+            <div class="review-card">"Highly recommended for anyone struggling with math."</div>
+        </section>
+
+        <section class="our-journey">
+            <h2>Our Journey 🚀</h2>
+        </section>
     </main>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We provide expert tutoring in Vedic Mathematics to help students improve their problem-solving skills and speed in calculations.</p>
-
-         <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@vedicmathtutoring.com</p>
-        <p>Phone: +123 456 7890</p>
     
-         </section>
-
     <footer>
-        <p>&copy; 2024 Vedic Math Tutoring. All rights reserved.</p>
-    </section>
-    
-        <div class="social-icons">
-            <ion-icon name="logo-twitter"></ion-icon>
-            <ion-icon name="logo-instagram"></ion-icon>
-            <ion-icon name="logo-facebook"></ion-icon>
+        <div class="footer-content">
+            <p>&copy; 2024 Vedic Math Tutoring. All rights reserved. 👑👑👑</p>
+            <div class="social-icons">
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-facebook"></ion-icon>
+            </div>
         </div>
+        <div class="bubbles-container"></div>
     </footer>
-
-    <script src="index.js"></script>
-    <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
