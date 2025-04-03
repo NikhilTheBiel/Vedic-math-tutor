@@ -1,12 +1,11 @@
+/* JS functionality */
 document.addEventListener("DOMContentLoaded", () => {
-    // Parallax Scrolling Effect
     const hero = document.querySelector(".hero");
     window.addEventListener("scroll", () => {
         let scrollPosition = window.scrollY;
         hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
     });
 
-    // Background Color Transition
     window.addEventListener("scroll", () => {
         let scrollTop = window.scrollY;
         let maxScroll = document.body.scrollHeight - window.innerHeight;
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.background = `rgb(${greenIntensity}, 139, 87)`;
     });
 
-    // Bubble Effect in Footer
     const bubblesContainer = document.querySelector(".bubbles-container");
     function createBubble() {
         const bubble = document.createElement("div");
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(createBubble, 500);
 
-    // Our Journey Section Animation
     const journey = document.querySelector(".our-journey");
     journey.innerHTML = `
         <div class="journey-step">🚀 Started in 2010</div>
