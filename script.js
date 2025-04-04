@@ -1,71 +1,180 @@
-document.addEventListener("DOMContentLoaded", () => {
-     // Parallax Scrolling Effect
-     const hero = document.querySelector(".hero");
-     window.addEventListener("scroll", () => {
-         let scrollPosition = window.scrollY;
-         hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-     });
- 
-     // Background Color Transition
-     window.addEventListener("scroll", () => {
-         let scrollTop = window.scrollY;
-         let maxScroll = document.body.scrollHeight - window.innerHeight;
-         let scrollPercent = scrollTop / maxScroll;
-         let greenIntensity = Math.max(255 - scrollPercent * 255, 90);
-         document.body.style.background = `rgb(${greenIntensity}, 139, 87)`;
-     });
- 
-     // Bubble Effect in Footer
-     const bubblesContainer = document.querySelector(".bubbles-container");
-     function createBubble() {
-         const bubble = document.createElement("div");
-         bubble.classList.add("bubble");
-         bubble.style.left = `${Math.random() * 100}%`;
-         bubble.style.animationDuration = `${2 + Math.random() * 3}s`;
-         bubblesContainer.appendChild(bubble);
-         setTimeout(() => bubble.remove(), 5000);
-     }
-     setInterval(createBubble, 500);
- 
-     // Our Journey Section Animation
-     const journey = document.querySelector(".our-journey");
-     journey.innerHTML = `
-         <div class="journey-step">🚀 Started in 2010</div>
-         <div class="journey-step">📚 First 100 students</div>
-         <div class="journey-step">🏆 Reached 10,000 students</div>
-         <div class="journey-step">👑 Leading Vedic Math Tutoring</div>
-     `;
- 
-     journey.querySelectorAll(".journey-step").forEach((step, index) => {
-         setTimeout(() => {
-             step.style.opacity = "1";
-             step.style.transform = "translateY(0)";
-         }, index * 500);
-     });
-
-                          
-     // Review Navigation
-     let reviewIndex = 0;
-     const reviews = document.querySelectorAll(".review-box");
-     const prevBtn = document.querySelector(".prev-btn");
-     const nextBtn = document.querySelector(".next-btn");
- 
-     function showReview(index) {
-         reviews.forEach((review, i) => {
-             review.style.display = (i === index) ? "block" : "none";
-         });
-     }
- 
-     nextBtn.addEventListener("click", () => {
-         reviewIndex = (reviewIndex + 1) % reviews.length;
-         showReview(reviewIndex);
-     });
- 
-     prevBtn.addEventListener("click", () => {
-         reviewIndex = (reviewIndex - 1 + reviews.length) % reviews.length;
-         showReview(reviewIndex);
-     });
- 
-     // Initial review visibility
-     showReview(reviewIndex);
- });
+document.addEventListener("DOMContentLoaded", function() {
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    
+    hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a link
+    const menuLinks = document.querySelectorAll('.menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            menu.classList.remove('active');
+        });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Review Slider
+    const reviewSlider = document.querySelector('.reviews-slider');
+    const reviewCards = document.querySelectorAll('.review-card');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    const dotsContainer = document.querySelector('.slider-dots');
+    let currentIndex = 0;
+    
+    // Create dots
+    reviewCards.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slider-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+    });
+    
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    function goToSlide(index) {
+        reviewSlider.scrollTo({
+            left: reviewCards[index].offsetLeft - reviewSlider.offsetLeft,
+            behavior: 'smooth'
+        });
+        
+        currentIndex = index;
+        updateDots();
+    }
+    
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + reviewCards.length) % reviewCards.length;
+        goToSlide(currentIndex);
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % reviewCards.length;
+        goToSlide(currentIndex);
+    });
+    
+    // Auto-scroll for courses
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const coursesSlider = document.querySelector('.courses-slider');
+    
+    coursesSlider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - coursesSlider.offsetLeft;
+        scrollLeft = coursesSlider.scrollLeft;
+    });
+    
+    coursesSlider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    
+    coursesSlider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    
+    coursesSlider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - coursesSlider.offsetLeft;
+        const walk = (x - startX) * 2;
+        coursesSlider.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Bubble effect
+    const bubblesContainer = document.querySelector('.bubbles-container');
+    
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        // Random size between 10 and 40px
+        const size = Math.random() * 30 + 10;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        
+        // Random position
+        bubble.style.left = `${Math.random() * 100}%`;
+        
+        // Random animation duration
+        const duration = Math.random() * 10 + 5;
+        bubble.style.animationDuration = `${duration}s`;
+        
+        // Random delay
+        bubble.style.animationDelay = `${Math.random() * 5}s`;
+        
+        bubblesContainer.appendChild(bubble);
+        
+        // Remove bubble after animation completes
+        setTimeout(() => {
+            bubble.remove();
+        }, duration * 1000);
+    }
+    
+    // Create initial bubbles
+    for (let i = 0; i < 15; i++) {
+        setTimeout(createBubble, i * 500);
+    }
+    
+    // Continue creating bubbles periodically
+    setInterval(createBubble, 2000);
+    
+    // Parallax effect for hero
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+        }
+    });
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to a server
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+    }
+});
