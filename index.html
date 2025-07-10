@@ -9,357 +9,216 @@
     <link rel="icon" href="android-chrome-192x192.png">
 </head>
 <body>
-    <!-- Stunning Header -->
-    <header class="wow-header">
-        <div class="logo-box">
-            <img src="android-chrome-192x192.png" alt="Vedic Math Logo" class="logo-pic">
-            <span class="logo-text">VEDIC MATH</span>
-        </div>
-        
-        <nav class="awesome-nav">
-            <a href="#home" class="nav-link">Home</a>
-            <div class="dropdown">
-                <a href="#courses" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-content">
-                    <a href="#division">Fast Division</a>
-                    <a href="#multiplication">Magic Multiplication</a>
-                    <a href="#roots">Square Roots</a>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-box">
+                <img src="android-chrome-192x192.png" alt="Vedic Math Logo" class="logo">
+                <span class="logo-text">VEDIC MATH</span>
             </div>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#contact" class="nav-link special-link">Join Now</a>
-        </nav>
-        
-        <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <div class="dropdown">
+                    <a href="#courses" class="nav-link">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#division">Fast Division</a>
+                        <a href="#multiplication">Magic Multiplication</a>
+                        <a href="#roots">Square Roots</a>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="btn btn-primary">Join Now</a>
+            </nav>
+            
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
 
-    <!-- Eye-Catching Hero with Carousel -->
-    <section id="home" class="hero-section">
-        <div class="hero-carousel">
-            <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
-                <div class="hero-content">
-                    <h1 class="hero-title">Unlock Your<br>Math Superpowers!</h1>
-                    <p class="hero-text">Calculate 10x faster with ancient Vedic secrets</p>
-                    <div class="hero-buttons">
-                        <a href="#courses" class="hero-btn">Explore Courses</a>
-                        <a href="#contact" class="hero-btn outline">Free Trial</a>
-                    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Unlock Your Math Superpowers!</h1>
+                <p class="hero-text">Calculate 10x faster with ancient Vedic secrets</p>
+                <div class="hero-actions">
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <a href="#contact" class="btn btn-outline">Free Trial</a>
                 </div>
             </div>
-            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1509869175650-a1d97972541a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
-                <div class="hero-content">
-                    <h1 class="hero-title">Ancient Techniques<br>Modern Results</h1>
-                    <p class="hero-text">Proven methods that stand the test of time</p>
-                    <div class="hero-buttons">
-                        <a href="#courses" class="hero-btn">Explore Courses</a>
-                        <a href="#contact" class="hero-btn outline">Free Trial</a>
-                    </div>
-                </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Math Learning">
             </div>
-            <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')">
-                <div class="hero-content">
-                    <h1 class="hero-title">Boost Your<br>Confidence in Math</h1>
-                    <p class="hero-text">From struggling to superstar in weeks</p>
-                    <div class="hero-buttons">
-                        <a href="#courses" class="hero-btn">Explore Courses</a>
-                        <a href="#contact" class="hero-btn outline">Free Trial</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-            <div class="carousel-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
-    <!-- Amazing Courses -->
-    <section id="courses" class="courses-section">
-        <h2 class="section-title">Transform Your Math Skills</h2>
-        
-        <div class="course-grid">
-            <!-- Course 1 -->
-            <div class="course-card">
-                <div class="course-icon"><i class="fas fa-divide"></i></div>
-                <h3>Fast Division</h3>
-                <p>Master lightning-fast division techniques</p>
-                <a href="#division" class="course-btn">Learn More</a>
-            </div>
+    <!-- Courses Section -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">Transform Your Math Skills</h2>
             
-            <!-- Course 2 -->
-            <div class="course-card highlight">
-                <div class="course-icon"><i class="fas fa-times"></i></div>
-                <h3>Magic Multiplication</h3>
-                <p>Multiply large numbers in seconds</p>
-                <a href="#multiplication" class="course-btn">Learn More</a>
-            </div>
-            
-            <!-- Course 3 -->
-            <div class="course-card">
-                <div class="course-icon"><i class="fas fa-square-root-alt"></i></div>
-                <h3>Square Roots</h3>
-                <p>Find square roots mentally</p>
-                <a href="#roots" class="course-btn">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Details Sections -->
-    <section id="division" class="course-detail-section">
-        <div class="detail-container">
-            <div class="detail-content">
-                <h2>Fast Division Course</h2>
-                <p>Master the ancient Vedic techniques for lightning-fast division that will amaze your teachers and friends.</p>
-                
-                <div class="schedule">
-                    <h3>What You'll Learn:</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Division by 9, 11, and other special numbers</li>
-                        <li><i class="fas fa-check"></i> The Nikhilam Sutra for quick division</li>
-                        <li><i class="fas fa-check"></i> Handling remainders mentally</li>
-                        <li><i class="fas fa-check"></i> Dividing large numbers in seconds</li>
-                        <li><i class="fas fa-check"></i> Practical applications in exams</li>
-                    </ul>
-                    
-                    <h3>Course Schedule:</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 1</div>
-                            <div class="timeline-content">Introduction to Vedic Division</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 2</div>
-                            <div class="timeline-content">Division by 9 and 11</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 3</div>
-                            <div class="timeline-content">Nikhilam Sutra Techniques</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 4</div>
-                            <div class="timeline-content">Advanced Division Methods</div>
-                        </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-divide"></i>
                     </div>
+                    <h3>Fast Division</h3>
+                    <p>Master lightning-fast division techniques</p>
+                    <a href="#division" class="btn btn-outline">Learn More</a>
                 </div>
                 
-                <a href="#contact" class="enroll-btn">Enroll Now</a>
-            </div>
-            <div class="detail-image">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Math Division">
-            </div>
-        </div>
-    </section>
-
-    <section id="multiplication" class="course-detail-section">
-        <div class="detail-container reverse">
-            <div class="detail-content">
-                <h2>Magic Multiplication Course</h2>
-                <p>Discover the secrets of multiplying large numbers mentally that will change how you do math forever.</p>
-                
-                <div class="schedule">
-                    <h3>What You'll Learn:</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> The Vertically and Crosswise method</li>
-                        <li><i class="fas fa-check"></i> Multiplying numbers near base values</li>
-                        <li><i class="fas fa-check"></i> Special techniques for 2-digit numbers</li>
-                        <li><i class="fas fa-check"></i"> Handling complex multiplications</li>
-                        <li><i class="fas fa-check"></i> Speed practice and applications</li>
-                    </ul>
-                    
-                    <h3>Course Schedule:</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 1</div>
-                            <div class="timeline-content">Foundations of Vedic Multiplication</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 2</div>
-                            <div class="timeline-content">Base Method Mastery</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 3</div>
-                            <div class="timeline-content">Vertically and Crosswise Technique</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 4</div>
-                            <div class="timeline-content">Advanced Multiplication Strategies</div>
-                        </div>
+                <div class="feature-card highlight">
+                    <div class="feature-icon">
+                        <i class="fas fa-times"></i>
                     </div>
+                    <h3>Magic Multiplication</h3>
+                    <p>Multiply large numbers in seconds</p>
+                    <a href="#multiplication" class="btn btn-outline">Learn More</a>
                 </div>
                 
-                <a href="#contact" class="enroll-btn">Enroll Now</a>
-            </div>
-            <div class="detail-image">
-                <img src="https://images.unsplash.com/photo-1635070040857-1025743b3983?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Math Multiplication">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-square-root-alt"></i>
+                    </div>
+                    <h3>Square Roots</h3>
+                    <p>Find square roots mentally</p>
+                    <a href="#roots" class="btn btn-outline">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="roots" class="course-detail-section">
-        <div class="detail-container">
-            <div class="detail-content">
-                <h2>Square Roots Course</h2>
-                <p>Learn to find square roots of perfect squares and approximate roots of any number mentally.</p>
-                
-                <div class="schedule">
+    <!-- Course Details -->
+    <section id="division" class="section bg-light">
+        <div class="container">
+            <div class="course-module">
+                <div class="module-content">
+                    <h2 class="module-title">Fast Division Course</h2>
+                    <p class="module-description">Master the ancient Vedic techniques for lightning-fast division that will amaze your teachers and friends.</p>
+                    
                     <h3>What You'll Learn:</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Finding exact square roots mentally</li>
-                        <li><i class="fas fa-check"></i> Approximation techniques</li>
-                        <li><i class="fas fa-check"></i> The Duplex method for squares</li>
-                        <li><i class="fas fa-check"></i> Special cases and shortcuts</li>
-                        <li><i class="fas fa-check"></i> Practical applications in geometry</li>
+                    <ul class="module-list">
+                        <li class="module-item">Division by 9, 11, and other special numbers</li>
+                        <li class="module-item">The Nikhilam Sutra for quick division</li>
+                        <li class="module-item">Handling remainders mentally</li>
+                        <li class="module-item">Dividing large numbers in seconds</li>
+                        <li class="module-item">Practical applications in exams</li>
                     </ul>
                     
-                    <h3>Course Schedule:</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 1</div>
-                            <div class="timeline-content">Introduction to Vedic Square Roots</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 2</div>
-                            <div class="timeline-content">Perfect Square Techniques</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 3</div>
-                            <div class="timeline-content">Approximation Methods</div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Week 4</div>
-                            <div class="timeline-content">Advanced Root Finding</div>
-                        </div>
-                    </div>
+                    <a href="#contact" class="btn btn-primary">Enroll Now</a>
                 </div>
-                
-                <a href="#contact" class="enroll-btn">Enroll Now</a>
-            </div>
-            <div class="detail-image">
-                <img src="https://images.unsplash.com/photo-1634693364645-84f146cfd143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Math Roots">
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Division Course">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Cool About Section -->
-    <section id="about" class="about-section">
-        <div class="about-content">
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
             <h2 class="section-title">Why Vedic Math?</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <span class="benefit-icon"><i class="fas fa-bolt"></i></span>
-                    <h4>10x Faster</h4>
-                    <p>Solve problems in record time</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>10x Faster</h3>
+                    <p>Solve problems in record time with our proven techniques</p>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon"><i class="fas fa-brain"></i></span>
-                    <h4>Mental Math</h4>
-                    <p>No calculator needed</p>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Mental Math</h3>
+                    <p>Develop incredible mental calculation abilities</p>
                 </div>
-                <div class="benefit">
-                    <span class="benefit-icon"><i class="fas fa-trophy"></i></span>
-                    <h4>Exam Advantage</h4>
-                    <p>Ace tests with extra time</p>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Exam Advantage</h3>
+                    <p>Ace tests with time to spare</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Ready to Begin?</h2>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Select Course</option>
+                        <option>Fast Division</option>
+                        <option>Magic Multiplication</option>
+                        <option>Square Roots</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Start Learning</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-box">
+                        <img src="android-chrome-192x192.png" alt="Vedic Math Logo" class="logo">
+                        <span class="logo-text">VEDIC MATH</span>
+                    </div>
+                    <p>Unlock your mathematical potential with ancient techniques.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@vedicmathgenius.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Math Lane, Genius City</li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="testimonials">
-                <h3>What Our Students Say</h3>
-                <div class="testimonial-slider">
-                    <div class="testimonial active">
-                        <div class="quote">"I went from struggling with basic math to winning our school's math competition!"</div>
-                        <div class="author">- Sarah, Age 14</div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="quote">"These techniques saved me so much time on my SAT. Scored 780 in Math!"</div>
-                        <div class="author">- Raj, Age 17</div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="quote">"As a parent, I've seen my child's confidence in math grow tremendously."</div>
-                        <div class="author">- Mrs. Johnson</div>
-                    </div>
-                </div>
-                <div class="testimonial-dots">
-                    <span class="t-dot active"></span>
-                    <span class="t-dot"></span>
-                    <span class="t-dot"></span>
-                </div>
+            <div class="copyright">
+                <p>&copy; 2025 Vedic Math Genius. All rights reserved.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section id="contact" class="contact-section">
-        <h2 class="section-title">Ready to Begin?</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone Number">
-            <select required>
-                <option value="">Select Course</option>
-                <option>Fast Division</option>
-                <option>Magic Multiplication</option>
-                <option>Square Roots</option>
-                <option>Complete Bundle (All Courses)</option>
-            </select>
-            <textarea placeholder="Any questions or special requests?"></textarea>
-            <button type="submit" class="form-btn">Start Learning</button>
-        </form>
-    </section>
-
-    <!-- Awesome Footer -->
-    <footer class="cool-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>VEDIC MATH</h4>
-                <p>Unlocking ancient mathematical wisdom for the modern world.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p><i class="fas fa-envelope"></i> info@vedicmathgenius.com</p>
-                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Math Lane, Genius City</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Vedic Math Genius | Made with <i class="fas fa-heart"></i> for math lovers</p>
         </div>
     </footer>
-
-    <!-- Audio Player -->
-    <div class="audio-player">
-        <button id="playPauseBtn"><i class="fas fa-play"></i></button>
-        <span>Study Music</span>
-        <audio id="bgMusic" loop>
-            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        </audio>
-    </div>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
